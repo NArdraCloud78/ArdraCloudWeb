@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <section className="header stricky py-3">
+    <section className="header sticky py-3">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -20,16 +20,16 @@ function Navbar() {
                       </Link>
                     </li>
                     <li className="nav-item py-2">
-                      <a className="nav-link active" href="/#features">Features</a>
+                      <a className="nav-link active" href="home#features">Features</a>
                     </li>
                     <li className="nav-item py-2">
                       <Link className="nav-link" to="/about">About Us</Link>
                     </li>
                     <li className="nav-item py-2">
-                      <a className="nav-link" href="/#developers">Developers</a>
+                      <a className="nav-link" href="home#developers">Developers</a>
                     </li>
                     <li className="nav-item py-2">
-                      <a className="nav-link" href="/#resources">Resources</a>
+                      <a className="nav-link" href="home#resources">Resources</a>
                     </li>
                     <li className="nav-item py-2">
                       <Link className="nav-link" to="/pricing">Pricing</Link>

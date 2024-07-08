@@ -1,10 +1,11 @@
 import React from 'react'
 import './index.css'
 
+
 function Index() {
   return (
-    <div>
-       <div>
+    
+       <div className='index-container' >
       <section className="main" data-aos="zoom-in" data-aos-duration="3000">
         <div className="container-fluid p-0">
           <span id="iot"></span>
@@ -14,7 +15,7 @@ function Index() {
               <div className="row justify-content-center row-card">
                 <div className="col-md-12 mx-auto mb-5">
                   <div className="logo-container text-center mb-5">
-                    <img src="frontend/assets/images/logo/footer-Logo.png" alt="Ardra Cloud Logo" />
+                    <img src="../../public/frontend/assets/images/logo/footer-Logo.png" alt="Ardra Cloud Logo" />
                   </div>
                   <div className="header-holder">
                     <h4 className="mb-3">Ardra Cloud <span>Industry4.0 right at your fingertips</span></h4>
@@ -47,18 +48,7 @@ function Index() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-xxl-4 col-xl-6 col-md-12 mb-4">
-                    <div className="card text-center">
-                      <div className="card-body">
-                        <div className="content-holder mb-4">
-                          <h3>ArdraWeb3</h3>
-                        </div>
-                        <div className="text-center">
-                          <a href="#" data-bs-toggle="modal" data-bs-target="#join-dev">Join Dev team <img src="frontend/assets/images/icon/right-angle-blue.png" className="ms-2" alt="Join Dev team" /></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -145,7 +135,7 @@ function Index() {
           </div>
         </div>
       </section>
-    </div>
+    
     </div>
   )
 }
