@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="icon" type="image/x-icon" href="frontend/assets/images/logo/Favicon_ardra.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Karla|Quicksand" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="frontend/css/style.css" />
+  
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet">
+  
+  <title>Ardra</title>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- Scripts -->
+  <script src="frontend/assets/js/jquery/jquery-3.6.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" integrity="sha512-17otjw7eTNU9MtpB7mFfXEwB6yDjA2qjDFkKSvsywI1PRAgpyOo+cp/wPSE/1kK4fFjA9OKsZVO1tr93MGNCEw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="frontend/assets/js/animation/bg.js"></script>
+  <script src="frontend/assets/js/animation/circle.js"></script>
+  <script src="frontend/assets/js/animation/half-corner.js"></script>
+  <script src="frontend/assets/js/animation/background.js"></script>
+  <script src="frontend/assets/js/animation/contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>
+  <script>
+AOS.init();
+</script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" integrity="sha512-17otjw7eTNU9MtpB7mFfXEwB6yDjA2qjDFkKSvsywI1PRAgpyOo+cp/wPSE/1kK4fFjA9OKsZVO1tr93MGNCEw=="
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="frontend/assets/js/animation/iot.js"></script>
+<script src="frontend/assets/js/animation/contact.js"></script>
+
+
+  <!-- Razorpay Payment Script -->
+  <script>
+    var SITEURL = 'index.html';
+    function donationPay(price) {
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      var totalAmount = price;
+      var options = {
+        "key": "rzp_test_4ujzQEVlCOK8EE",
+        "amount": totalAmount * 100, // Amount in smallest currency unit (e.g., cents)
+        "name": "Ardra",
+        "description": "Payment",
+        "image": "//www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
+        "handler": function (response) {
+          $('#exampleModal3').modal('show'); // Show your success modal or handle response
+        },
+        "prefill": {
+          "contact": $("name[name='mobile']").val(),
+          "email": $("name[name='email']").val(),
+        },
+        "theme": {
+          "color": "#528FF0" // Customize the color theme
+        }
+      };
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+    }
+  </script>
+</body>
+</html>
